@@ -1,477 +1,160 @@
-/* ==========================
-   SHREE AMCHA GANPATI MANDAL
-   LUXURY CSS V2 - PART 1
-========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+// ===============================
+// SHREE AMCHA GANPATI MANDAL
+// SCRIPT V2 - PART 1
+// ===============================
 
-html{
-    scroll-behavior:smooth;
-}
+// Smooth Scroll
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#090909;
-    color:#fff;
-    overflow-x:hidden;
-}
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
-img{
-    max-width:100%;
-    display:block;
-}
+link.addEventListener("click",function(e){
 
-.container{
-    width:90%;
-    max-width:1400px;
-    margin:auto;
-}
+e.preventDefault();
 
-/* ==========================
-   HEADER
-========================== */
-
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 40px;
-    background:rgba(0,0,0,.92);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(212,175,55,.35);
-    z-index:9999;
-}
+const target=document.querySelector(this.getAttribute("href"));
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
+if(target){
 
-.logo img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:2px solid #FFD700;
-}
+target.scrollIntoView({
 
-.logo h2{
-    color:#FFD700;
-    font-size:14px;
-    font-family:'Cinzel',serif;
-}
+behavior:"smooth"
 
-.logo h1{
-    color:#fff;
-    font-size:26px;
-    font-family:'Cinzel',serif;
-}
+});
 
-.logo p{
-    color:#c9a227;
-    font-size:11px;
 }
 
-nav ul{
-    display:flex;
-    gap:28px;
-    list-style:none;
-}
+});
 
-nav ul li a{
-    text-decoration:none;
-    color:#fff;
-    font-weight:600;
-    transition:.3s;
-}
+});
 
-nav ul li a:hover{
-    color:#FFD700;
-}
+// Navbar Shadow
 
-.instagram{
-    width:45px;
-    height:45px;
-    border:2px solid #FFD700;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#FFD700;
-    text-decoration:none;
-    font-size:20px;
-}
+const header=document.querySelector(".header");
 
-/* ==========================
-   HERO
-========================== */
-
-.hero{
-    margin-top:80px;
-    width:100%;
-    height:100vh;
-    min-height:700px;
-    overflow:hidden;
-    background:#000;
-}
+window.addEventListener("scroll",()=>{
 
-.hero-banner{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    }
-/* ==========================
-   LATEST PHOTOS & VIDEOS
-========================== */
-
-.latest{
-    padding:90px 0;
-    background:#101010;
-}
+if(window.scrollY>50){
 
-.section-title{
-    text-align:center;
-    font-size:42px;
-    font-family:'Cinzel',serif;
-    color:#FFD700;
-    margin-bottom:50px;
-}
+header.style.background="rgba(0,0,0,.95)";
+header.style.boxShadow="0 5px 20px rgba(255,215,0,.25)";
 
-.latest-grid{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
+}else{
 
-.latest-card{
-    background:#181818;
-    border-radius:18px;
-    overflow:hidden;
-    border:1px solid rgba(255,215,0,.30);
-    transition:.4s;
-}
+header.style.background="rgba(0,0,0,.90)";
+header.style.boxShadow="none";
 
-.latest-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px rgba(255,215,0,.35);
 }
 
-.latest-card img,
-.latest-card video{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-}
+});
 
-.latest-card h3{
-    color:#FFD700;
-    padding:18px;
-    font-size:22px;
-}
+// Scroll To Top
 
-.latest-card p{
-    padding:0 18px 20px;
-    color:#ddd;
-    line-height:1.8;
-}
+const topBtn=document.getElementById("topBtn");
 
-/* ==========================
-   ABOUT
-========================== */
+window.addEventListener("scroll",()=>{
 
-.about{
-    padding:90px 0;
-    background:#0c0c0c;
-}
+if(window.scrollY>300){
 
-.about-box{
-    width:90%;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:40px;
-    background:#181818;
-    border-radius:25px;
-    padding:40px;
-    border:1px solid rgba(255,215,0,.30);
-}
+topBtn.style.display="flex";
 
-.about-icon{
-    width:170px;
-}
+}else{
 
-.about-text h2{
-    color:#FFD700;
-    font-size:38px;
-    font-family:'Cinzel',serif;
-    margin-bottom:20px;
-}
+topBtn.style.display="none";
 
-.about-text p{
-    color:#ddd;
-    line-height:1.9;
-    font-size:18px;
 }
 
-/* BUTTON */
-
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 40px;
-    background:#b67a00;
-    color:#fff;
-    text-decoration:none;
-    border-radius:10px;
-    border:2px solid #FFD700;
-    transition:.3s;
-}
+});
 
-.btn:hover{
-    background:#FFD700;
-    color:#000;
-}
-/* ==========================
-   GALLERY
-========================== */
-
-.gallery{
-    padding:90px 0;
-    background:#090909;
-}
+topBtn.onclick=()=>{
 
-.gallery-grid{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+window.scrollTo({
 
-.gallery-item{
-    background:#181818;
-    border-radius:18px;
-    overflow:hidden;
-    border:1px solid rgba(255,215,0,.30);
-    transition:.4s;
-}
+top:0,
 
-.gallery-item:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px rgba(255,215,0,.30);
-}
+behavior:"smooth"
 
-.gallery-item img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
+});
 
-/* ==========================
-   MEMBERS
-========================== */
+};
+// ===============================
+// GALLERY IMAGE POPUP
+// ===============================
 
-.members{
-    padding:90px 0;
-    background:#101010;
-}
+const galleryImages=document.querySelectorAll(".gallery-item img");
 
-.members-grid{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
+const popup=document.createElement("div");
 
-.member-card{
-    background:#181818;
-    border:1px solid rgba(255,215,0,.30);
-    border-radius:20px;
-    padding:25px;
-    text-align:center;
-}
+popup.id="popup";
 
-.member-card img{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #FFD700;
-    margin:auto;
-}
+popup.innerHTML=`
+<span id="closePopup">&times;</span>
+<img id="popupImg">
+`;
 
-.member-card h3{
-    margin-top:20px;
-    color:#FFD700;
-}
+document.body.appendChild(popup);
 
-.member-card p{
-    color:#ddd;
-    margin-top:8px;
-}
+const popupImg=document.getElementById("popupImg");
+const closePopup=document.getElementById("closePopup");
 
-/* ==========================
-   CONTACT
-========================== */
+galleryImages.forEach(img=>{
 
-.contact{
-    padding:90px 0;
-    background:#0c0c0c;
-}
+img.addEventListener("click",()=>{
 
-.contact-box{
-    width:90%;
-    max-width:700px;
-    margin:auto;
-    background:#181818;
-    border:1px solid rgba(255,215,0,.30);
-    border-radius:20px;
-    padding:35px;
-    text-align:center;
-}
+popup.style.display="flex";
 
-.contact-box p{
-    color:#ddd;
-    margin:12px 0;
-}
+popupImg.src=img.src;
 
-/* ==========================
-   FOOTER
-========================== */
-
-footer{
-    background:#000;
-    padding:30px;
-    text-align:center;
-    border-top:1px solid rgba(255,215,0,.25);
-}
+});
 
-footer h3{
-    color:#FFD700;
-    margin-bottom:10px;
-    font-family:'Cinzel',serif;
-}
+});
 
-footer p{
-    color:#aaa;
-}
+closePopup.onclick=()=>{
 
-/* ==========================
-   FLOATING BUTTONS
-========================== */
-
-.whatsapp,
-.admin-btn,
-#topBtn{
-    position:fixed;
-    right:20px;
-    z-index:999;
-}
+popup.style.display="none";
 
-.whatsapp{
-    bottom:20px;
-    width:55px;
-    height:55px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    text-decoration:none;
-    font-size:28px;
-}
+};
 
-#topBtn{
-    bottom:90px;
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:#FFD700;
-    color:#000;
-    cursor:pointer;
-}
+popup.onclick=(e)=>{
+
+if(e.target===popup){
+
+popup.style.display="none";
 
-.admin-btn{
-    bottom:155px;
-    background:#b67a00;
-    color:#fff;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:8px;
 }
 
-/* ==========================
-   MOBILE
-========================== */
+};
 
-@media(max-width:768px){
+// ===============================
+// SCROLL ANIMATION
+// ===============================
 
-.header{
-    flex-direction:column;
-    height:auto;
-    padding:15px;
-}
+const observer=new IntersectionObserver((entries)=>{
 
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
+entries.forEach(entry=>{
 
-.hero{
-    height:55vh;
-    min-height:320px;
-}
+if(entry.isIntersecting){
 
-.hero-banner{
-    object-fit:cover;
-}
+entry.target.classList.add("show");
 
-.about-box{
-    flex-direction:column;
-    text-align:center;
 }
 
-.about-icon{
-    width:120px;
-}
+});
 
-.latest-grid,
-.gallery-grid,
-.members-grid{
-    grid-template-columns:1fr;
-}
+});
 
-.section-title{
-    font-size:30px;
-}
+document.querySelectorAll("section").forEach(section=>{
 
-.logo h1{
-    font-size:18px;
-}
+section.classList.add("hidden");
 
-.logo h2{
-    font-size:12px;
-}
+observer.observe(section);
 
-.logo img{
-    width:45px;
-    height:45px;
-}
+});
 
-}
+// ===============================
+// FUTURE ADMIN SUPPORT
+// ===============================
+
+// Future me Firebase / Cloudinary
+// connect karne par Latest Photos,
+// Videos aur Gallery automatic
+// yahi se load hogi.
