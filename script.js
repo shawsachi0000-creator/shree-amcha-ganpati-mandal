@@ -1,84 +1,43 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+// Full Screen Image Viewer
 
-body{
-    background:linear-gradient(135deg,#ff7b00,#ffb300,#ffd54f);
-    min-height:100vh;
-    color:#fff;
-}
+const images = document.querySelectorAll(".photo-grid img");
 
-.hero{
-    text-align:center;
-    padding:50px 20px;
-}
+const viewer = document.createElement("div");
+viewer.id = "viewer";
 
-.hero h1{
-    font-size:42px;
-    text-shadow:0 0 20px gold;
-}
+viewer.innerHTML = `
+    <span id="close">&times;</span>
+    <img id="viewer-img">
+`;
 
-.hero p{
-    margin-top:10px;
-    font-size:18px;
-}
+document.body.appendChild(viewer);
 
-.about{
-    width:90%;
-    max-width:900px;
-    margin:20px auto;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(12px);
-    border-radius:20px;
-    padding:20px;
-}
+const viewerImg = document.getElementById("viewer-img");
+const closeBtn = document.getElementById("close");
 
-.search{
-    width:90%;
-    max-width:500px;
-    margin:20px auto;
-}
+images.forEach(img=>{
 
-.search input{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:30px;
-    font-size:16px;
-}
+    img.addEventListener("click",()=>{
 
-.members{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    width:90%;
-    margin:30px auto;
-}
+        viewer.style.display="flex";
+        viewerImg.src=img.src;
 
-.card{
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    text-align:center;
-    padding:20px;
-    transition:.3s;
-}
+    });
 
-.card:hover{
-    transform:translateY(-10px);
-}
+});
 
-.card img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid gold;
-}
+closeBtn.addEventListener("click",()=>{
 
-.card h3{
-    margin-top:15px;
-}
+    viewer.style.display="none";
+
+});
+
+viewer.addEventListener("click",(e)=>{
+
+    if(e.target===viewer){
+
+        viewer.style.display="none";
+
+    }
+
+});
