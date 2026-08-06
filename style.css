@@ -550,3 +550,47 @@ color:white;
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
 }
+@media (max-width:768px){
+
+.navbar{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 12px;
+}
+
+.logo img{
+    width:40px;
+    height:40px;
+}
+
+.logo h1{
+    font-size:16px;
+}
+
+.logo h2{
+    font-size:12px;
+}
+
+.logo p{
+    display:none;
+}
+
+.navbar ul{
+    display:flex;
+    gap:8px;
+    font-size:11px;
+    flex-wrap:nowrap;
+}
+
+.insta{
+    width:36px;
+    height:36px;
+    font-size:18px;
+}
+
+.hero{
+    margin-top:70px;
+}
+
+}
