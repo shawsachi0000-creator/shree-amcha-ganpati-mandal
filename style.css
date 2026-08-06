@@ -1,10 +1,13 @@
-/* ===== RESET ===== */
+/* =========================
+   SHREE AMCHA GANPATI MANDAL
+   PREMIUM STYLE - PART 1
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 html{
@@ -12,16 +15,56 @@ html{
 }
 
 body{
-    background:#fff8ef;
-    color:#333;
+    background:#0b0b0b;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* ===== HERO ===== */
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(12px);
+    z-index:999;
+    border-bottom:1px solid rgba(255,215,0,.35);
+}
+
+nav h2{
+    color:#FFD700;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#FFD700;
+}
+
+/* HERO */
 
 .hero{
     height:100vh;
-    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("2025-1.jpg");
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("hero.jpg");
     background-size:cover;
     background-position:center;
     display:flex;
@@ -32,226 +75,145 @@ body{
 }
 
 .hero h1{
-    font-size:55px;
-    color:#fff;
-    text-shadow:0 0 20px gold;
+    font-size:60px;
+    color:#FFD700;
+    text-shadow:0 0 25px #FFD700;
 }
 
 .hero p{
-    margin-top:15px;
+    margin-top:20px;
     font-size:22px;
     color:#fff;
 }
 
-/* ===== ABOUT ===== */
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    background:#FFD700;
+    color:#000;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:scale(1.08);
+}
+/* =========================
+   ABOUT SECTION
+========================= */
 
 .about{
-    max-width:1100px;
-    margin:60px auto;
-    padding:35px;
-    background:#fff;
-    border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-}
-
-.about h2{
-    color:#ff6f00;
-    margin-bottom:20px;
-    text-align:center;
-}
-
-.about p{
-    text-align:center;
-    line-height:1.8;
-    font-size:18px;
-}
-
-/* ===== GALLERY ===== */
-
-.gallery{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.gallery h2{
-    text-align:center;
-    color:#ff6f00;
-    font-size:38px;
-    margin-bottom:40px;
-}
-
-.gallery h3{
-    margin:40px 0 20px;
-    color:#e65100;
-    font-size:28px;
-    border-left:6px solid orange;
-    padding-left:15px;
-}
-/* ===== PHOTO GRID ===== */
-
-.photo-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-bottom:40px;
-}
-
-.photo-grid img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:20px;
-    cursor:pointer;
-    transition:.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.photo-grid img:hover{
-    transform:scale(1.05);
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
-}
-
-/* ===== MEMBERS ===== */
-
-.members{
-    width:90%;
-    max-width:1200px;
-    margin:60px auto;
-}
-
-.members h2{
-    text-align:center;
-    color:#ff6f00;
-    margin-bottom:30px;
-}
-
-.member-card{
-    background:#fff;
-    border-radius:20px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.member-card img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid orange;
-}
-
-/* ===== FOOTER ===== */
-
-footer{
-    background:#ff6f00;
-    color:#fff;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
-
-.hero h1{
-    font-size:36px;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-.gallery h2{
-    font-size:28px;
-}
-
-.gallery h3{
-    font-size:22px;
-}
-
-.about{
-    padding:20px;
-}
-
-.photo-grid{
-    grid-template-columns:1fr;
-}
-
-}
-
-/* Full Screen Image Viewer */
-
-#viewer{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.9);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-#viewer img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:15px;
-}
-
-#close{
-    position:absolute;
-    top:25px;
-    right:35px;
-    color:white;
-    font-size:45px;
-    cursor:pointer;
-}
-/* ===========================
-   Committee Members
-=========================== */
-
-.members{
     width:90%;
     max-width:1200px;
     margin:80px auto;
+    padding:40px;
+    background:#141414;
+    border:1px solid rgba(255,215,0,.3);
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,215,0,.15);
 }
 
-.members h2{
-    text-align:center;
-    font-size:40px;
+.about h2{
     color:#FFD700;
-    margin-bottom:40px;
+    text-align:center;
+    margin-bottom:20px;
+    font-size:38px;
+}
+
+.about p{
+    color:#ddd;
+    line-height:1.8;
+    text-align:center;
+    font-size:18px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    width:90%;
+    max-width:1300px;
+    margin:80px auto;
+}
+
+.gallery h2{
+    text-align:center;
+    color:#FFD700;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.gallery h3{
+    color:#FFD700;
+    margin:40px 0 20px;
+    font-size:30px;
+    border-left:5px solid #FFD700;
+    padding-left:15px;
 }
 
 .photo-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
+    margin-bottom:40px;
+}
+
+.photo-grid img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:18px;
+    border:3px solid #FFD700;
+    transition:.4s;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.photo-grid img:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 40px rgba(255,215,0,.4);
+}
+/* =========================
+   COMMITTEE MEMBERS
+========================= */
+
+.members{
+    width:90%;
+    max-width:1300px;
+    margin:80px auto;
+}
+
+.members h2{
+    text-align:center;
+    color:#FFD700;
+    font-size:42px;
+    margin-bottom:40px;
 }
 
 .member-card{
-    background:linear-gradient(145deg,#111,#222);
-    border:2px solid #FFD700;
+    background:#141414;
+    border:2px solid rgba(255,215,0,.35);
     border-radius:20px;
     padding:25px;
     text-align:center;
     transition:.4s;
-    box-shadow:0 0 25px rgba(255,215,0,.25);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 .member-card:hover{
     transform:translateY(-10px);
-    box-shadow:0 0 40px rgba(255,215,0,.6);
+    border-color:#FFD700;
+    box-shadow:0 0 35px rgba(255,215,0,.4);
 }
 
 .member-card img{
-    width:140px;
-    height:140px;
+    width:130px;
+    height:130px;
     border-radius:50%;
     object-fit:cover;
     border:4px solid #FFD700;
@@ -259,15 +221,70 @@ footer{
 
 .member-card h3{
     color:#fff;
-    margin:20px 0 10px;
+    margin:15px 0 8px;
 }
 
 .member-card a{
     color:#FFD700;
     text-decoration:none;
-    font-size:18px;
+    font-weight:bold;
 }
 
 .member-card a:hover{
-    color:#fff;
+    color:#ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:80px;
+    padding:30px;
+    text-align:center;
+    background:#111;
+    border-top:1px solid rgba(255,215,0,.3);
+    color:#bbb;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .about,
+    .gallery,
+    .members{
+        width:95%;
+    }
+
+    .gallery h2,
+    .members h2{
+        font-size:30px;
+    }
+
+    .photo-grid{
+        grid-template-columns:1fr;
+    }
 }
