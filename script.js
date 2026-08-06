@@ -112,3 +112,20 @@ viewer.style.display="none";
 }
 
 };
+// Loading Screen
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+const loader=document.getElementById("loader");
+
+if(loader){
+
+loader.style.display="none";
+
+}
+
+},2000);
+
+});
