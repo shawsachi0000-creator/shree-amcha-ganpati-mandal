@@ -44,8 +44,8 @@ body{
 }
 
 .logo img{
-    width:45px;
-height:45px;
+    width:30px;
+    height:30px;
     border-radius:50%;
     border:2px solid #d4af37;
 }
@@ -66,12 +66,20 @@ height:45px;
     color:#d4af37;
     font-size:10px;
 }
-
 .navbar ul{
     display:flex;
-    list-style:none;
-    gap:35px;
+    gap:6px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    white-space:nowrap;
+    justify-content:flex-start;
 }
+
+.navbar ul li a{
+    font-size:10px;
+}
+
+
 
 .navbar ul li a{
     color:#fff;
