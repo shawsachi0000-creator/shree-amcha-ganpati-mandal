@@ -1,329 +1,60 @@
-/* ==========================
-   SHREE AMCHA GANPATI MANDAL
-   PREMIUM CSS - PART 1
-========================== */
+// ===============================
+// Shree Amcha Ganpati Mandal
+// Premium Script
+// ===============================
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
 
-html{
-    scroll-behavior:smooth;
-}
+    const target = document.querySelector(this.getAttribute("href"));
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#080808;
-    color:#fff;
-    overflow-x:hidden;
-}
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
 
-/* NAVBAR */
+// Navbar Effect
+window.addEventListener("scroll", () => {
 
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(15px);
-    z-index:999;
-    border-bottom:1px solid rgba(255,215,0,.25);
-}
+  const navbar = document.querySelector(".navbar");
 
-.logo h2{
-    color:#FFD700;
-    font-family:'Cinzel',serif;
-    font-size:28px;
-}
+  if (!navbar) return;
 
-.navbar ul{
-    display:flex;
-    gap:35px;
-    list-style:none;
-}
+  if (window.scrollY > 50) {
 
-.navbar a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
+    navbar.style.background = "rgba(0,0,0,0.95)";
+    navbar.style.boxShadow = "0 5px 20px rgba(255,215,0,.4)";
 
-.navbar a:hover{
-    color:#FFD700;
-}
+  } else {
 
-/* HERO */
+    navbar.style.background = "rgba(0,0,0,.75)";
+    navbar.style.boxShadow = "none";
 
-.hero{
-    height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("hero.jpg") center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
+  }
 
-.hero-content{
-    max-width:900px;
-}
+});
 
-.hero h3{
-    color:#FFD700;
-    letter-spacing:4px;
-    margin-bottom:20px;
-}
+// Fade Animation
+const observer = new IntersectionObserver((entries) => {
 
-.hero h1{
-    font-size:72px;
-    font-family:'Cinzel',serif;
-    color:white;
-    text-shadow:0 0 25px gold;
-}
+  entries.forEach((entry) => {
 
-.hero p{
-    margin:25px 0;
-    font-size:22px;
-    color:#ddd;
-}
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
 
-.btn{
-    display:inline-block;
-    padding:16px 45px;
-    border-radius:50px;
-    background:#FFD700;
-    color:#000;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
+  });
 
-.btn:hover{
-    background:#fff;
-    transform:translateY(-5px);
-}
-/* ==========================
-   ABOUT SECTION
-========================== */
+});
 
-.about{
-    width:90%;
-    max-width:1200px;
-    margin:100px auto;
-    background:#111;
-    border:1px solid rgba(255,215,0,.3);
-    border-radius:20px;
-    padding:50px;
-    text-align:center;
-    box-shadow:0 0 35px rgba(255,215,0,.12);
-}
+document.querySelectorAll("section").forEach((section) => {
 
-.about h2{
-    font-family:'Cinzel',serif;
-    color:#FFD700;
-    font-size:42px;
-    margin-bottom:20px;
-}
+  section.classList.add("hidden");
+  observer.observe(section);
 
-.about p{
-    color:#ddd;
-    line-height:1.9;
-    font-size:18px;
-}
-
-/* ==========================
-   GALLERY
-========================== */
-
-.gallery{
-    width:90%;
-    max-width:1400px;
-    margin:100px auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-family:'Cinzel',serif;
-    color:#FFD700;
-    font-size:48px;
-}
-
-.section-title p{
-    color:#bbb;
-    margin-top:10px;
-}
-
-.year-section{
-    margin-bottom:80px;
-}
-
-.year-section h2{
-    color:#FFD700;
-    margin-bottom:30px;
-    font-size:34px;
-    border-left:5px solid #FFD700;
-    padding-left:20px;
-}
-
-.photo-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.photo-grid img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:20px;
-    border:2px solid rgba(255,215,0,.4);
-    transition:.4s;
-    cursor:pointer;
-    box-shadow:0 15px 35px rgba(0,0,0,.45);
-}
-
-.photo-grid img:hover{
-    transform:translateY(-10px) scale(1.03);
-    border-color:#FFD700;
-    box-shadow:0 0 35px rgba(255,215,0,.5);
-}
-/* ==========================
-   COMMITTEE MEMBERS
-========================== */
-
-.members{
-    width:90%;
-    max-width:1400px;
-    margin:100px auto;
-}
-
-.member-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.member-card{
-    background:#111;
-    border:2px solid rgba(255,215,0,.25);
-    border-radius:25px;
-    padding:30px;
-    text-align:center;
-    transition:.4s;
-}
-
-.member-card:hover{
-    transform:translateY(-10px);
-    border-color:#FFD700;
-    box-shadow:0 0 35px rgba(255,215,0,.35);
-}
-
-.member-card img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #FFD700;
-    margin-bottom:20px;
-}
-
-.member-card h3{
-    color:#FFD700;
-    margin-bottom:10px;
-    font-size:24px;
-}
-
-.member-card a{
-    color:#fff;
-    text-decoration:none;
-    font-size:17px;
-}
-
-.member-card a:hover{
-    color:#FFD700;
-}
-
-/* ==========================
-   CONTACT
-========================== */
-
-.contact{
-    width:90%;
-    max-width:1200px;
-    margin:100px auto;
-    text-align:center;
-}
-
-.contact p{
-    margin:15px 0;
-    color:#ddd;
-    font-size:18px;
-}
-
-/* ==========================
-   FOOTER
-========================== */
-
-footer{
-    background:#050505;
-    border-top:1px solid rgba(255,215,0,.3);
-    padding:30px;
-    text-align:center;
-}
-
-footer p{
-    color:#FFD700;
-}
-
-/* ==========================
-   MOBILE
-========================== */
-
-@media(max-width:768px){
-
-.navbar{
-    flex-direction:column;
-    padding:15px;
-}
-
-.navbar ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-    margin-top:15px;
-}
-
-.hero h1{
-    font-size:42px;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-.about{
-    padding:30px 20px;
-}
-
-.section-title h2{
-    font-size:34px;
-}
-
-.photo-grid,
-.member-grid{
-    grid-template-columns:1fr;
-}
-
-}
+});
